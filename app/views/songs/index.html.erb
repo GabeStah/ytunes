@@ -2,13 +2,13 @@
 
 <h1>Listing Songs</h1>
 
-<table>
+<table class="mdl-data-table mdl-js-data-table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Artist</th>
-      <th>Word</th>
-      <th>Lyrics</th>
+      <th class="mdl-data-table__cell--non-numeric">Title</th>
+      <th class="mdl-data-table__cell--non-numeric">Artist</th>
+      <th class="mdl-data-table__cell--non-numeric">Word</th>
+      <th class="mdl-data-table__cell--non-numeric">Lyrics</th>
       <th>Used</th>
       <th>Winner</th>
       <th>Youtube</th>
@@ -20,13 +20,13 @@
   <tbody>
     <% @songs.each do |song| %>
       <tr>
-        <td><%= song.title %></td>
-        <td><%= song.artist %></td>
-        <td><%= song.word %></td>
-        <td><%= song.lyrics %></td>
+        <td class="mdl-data-table__cell--non-numeric mdl-data-table--selectable"><%= song.title %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= song.artist %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= song.word %></td>
+        <td class="mdl-data-table__cell--non-numeric"><%= highlight(simple_format(excerpt(song.lyrics, song.word, radius: 75)), song.word) %></td>
         <td><%= song.used %></td>
         <td><%= song.winner %></td>
-        <td><%= song.youtube_id %></td>
+        <td><%= link_to(song.youtube_id, song.youtube_url, target: "_blank") %></td>
         <td><%= song.youtube_start_time %></td>
         <td><%= link_to 'Show', song %></td>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>

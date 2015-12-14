@@ -39,7 +39,7 @@ If I must fight, I'll fight
 To make this land our own
 Until I die, this land is mine",
   youtube_id: "QEYmomUuveU",
-  youtube_start_time: 0,
+  youtube_start_time: 18,
 )
 
 Song.create(
@@ -114,7 +114,7 @@ I'll tell you my sins and you can sharpen your knife
 Offer me that deathless death
 Good God, let me give you my life",
   youtube_id: "MYSVMgRr6pw",
-  youtube_start_time: 11,
+  youtube_start_time: 12,
 )
 
 # Song.create(

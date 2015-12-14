@@ -17,7 +17,7 @@
 
 <p>
   <strong>Lyrics:</strong>
-  <%= @song.lyrics %>
+  <%= highlight(simple_format(@song.lyrics), @song.word) %>
 </p>
 
 <p>
