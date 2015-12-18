@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214221454) do
+ActiveRecord::Schema.define(version: 20151218204415) do
 
   create_table "songs", force: :cascade do |t|
     t.string   "title"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20151214221454) do
     t.string   "word"
     t.text     "lyrics"
     t.boolean  "used"
-    t.boolean  "winner"
+    t.string   "winner"
     t.string   "youtube_id"
     t.integer  "youtube_start_time"
     t.datetime "created_at",         null: false

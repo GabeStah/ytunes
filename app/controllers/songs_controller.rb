@@ -51,16 +51,6 @@ class SongsController < ApplicationController
     end
   end
 
-  # DELETE /songs/1
-  # DELETE /songs/1.json
-  def destroy
-    @song.destroy
-    respond_to do |format|
-      format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_song

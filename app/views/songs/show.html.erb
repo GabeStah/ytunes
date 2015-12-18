@@ -1,22 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @song.title %>
+  <%= link_to 'Edit', edit_song_path(@song) %> |
+  <%= link_to 'Back', songs_path %>
+</p>
+
+<section>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @song.youtube_id %>?start=<%= @song.youtube_start_time %>" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section>
+  <h2><%= @song.title %></h2>
+  <h3><%= @song.artist %></h3>
+</section>
+
+<p>
+  <strong>Keyword:</strong>
+  <span class="keyword"><%= @song.word %></span>
 </p>
 
 <p>
-  <strong>Artist:</strong>
-  <%= @song.artist %>
-</p>
-
-<p>
-  <strong>Word:</strong>
-  <%= @song.word %>
-</p>
-
-<p>
-  <strong>Lyrics:</strong>
   <%= highlight(simple_format(@song.lyrics), @song.word) %>
 </p>
 
@@ -29,16 +32,3 @@
   <strong>Winner:</strong>
   <%= @song.winner %>
 </p>
-
-<p>
-  <strong>Youtube:</strong>
-  <%= @song.youtube_id %>
-</p>
-
-<p>
-  <strong>Youtube start time:</strong>
-  <%= @song.youtube_start_time %>
-</p>
-
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
