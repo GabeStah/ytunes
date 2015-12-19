@@ -28,7 +28,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 # rbenv
 set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.2.4-p230'
+set :rbenv_ruby, '2.2.4'
 
 # in case you want to set ruby version from the file:
 # set :rbenv_ruby, File.read('.ruby-version').strip
