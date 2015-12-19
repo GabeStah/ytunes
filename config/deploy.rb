@@ -90,7 +90,7 @@ namespace :deploy do
   desc 'Rebuild Database'
   task :rebuild_db do
     on roles(:app) do
-      invoke 'deploy:db:reset'
+      execute "rake db:reset RAILS_ENV=production"
     end
   end
 
