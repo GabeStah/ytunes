@@ -87,9 +87,17 @@ namespace :deploy do
     end
   end
 
+  desc 'Rebuild Database'
+  task :rebuild_db do
+    on roles(:app) do
+      invoke 'deploy:db:reset'
+    end
+  end
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
+  after  :finishing,    :rebuild_db
   after  :finishing,    :restart
 end
 
