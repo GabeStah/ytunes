@@ -1,4 +1,8 @@
 class Song < ActiveRecord::Base
+  def youtube_test
+    true
+  end
+  
   def youtube_url
     if youtube_id
       if youtube_start_time && youtube_start_time > 0
